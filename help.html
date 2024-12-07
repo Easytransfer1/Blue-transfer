@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Transfer Support</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f0f0;
+}
+.chat-container {
+width: 100%;
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+background-color: #fff;
+border: 1px solid #ddd;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+}
+.header {
+width: 100%;
+height: 60px;
+background-color: #007bff;
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 10px 10px 0 0;
+}
+.header-text {
+font-size: 18px;
+font-weight: bold;
+}
+.input-container {
+width: 100%;
+height: 60px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px;
+border-top: 1px solid #ddd;
+}
+.input-field {
+width: 80%;
+height: 40px;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+.send-button {
+width: 20%;
+height: 40px;
+background-color: #007bff;
+color: #fff;
+font-size: 16px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}
+.chat-messages {
+width: 100%;
+height: 70vh;
+overflow-y: auto;
+padding: 20px;
+}
+.message {
+width: 50%;
+height: auto;
+background-color: #f0f0f0;
+border: 1px solid #ddd;
+border-radius: 10px;
+padding: 10px;
+margin-bottom: 20px;
+}
+.message-text {
+font-size: 16px;
+color: #333;
+}
+</style>
+</head>
+<body>
+<div class="chat-container">
+<div class="header">
+<div class="header-text">Blue Transfer Support</div>
+</div>
+<div class="input-container">
+<input type="text" id="input-field" class="input-field" placeholder="Type a message...">
+<button class="send-button" onclick="sendMessage()">Send</button>
+</div>
+<div class="chat-messages" id="chat-messages">
+</div>
+</div>
+<script>
+function sendMessage() {
+const inputField = document.getElementById('input-field');
+const messageText = inputField.value;
+if (messageText !== '') {
+const message = document.createElement('div');
+message.classList.add('message');
+message.innerHTML = `<div class="message-text">${messageText}</div>`;
+document.getElementById('chat-messages').appendChild(message);
+inputField.value = '';
+const responseMessage = document.createElement('div');
+responseMessage.classList.add('message');
+responseMessage.style.marginLeft = '50%';
+responseMessage.innerHTML = `<div class="message-text">Thanks for reaching out! We'll get back to you soon.</div>`;
+document.getElementById('chat-messages').appendChild(responseMessage);
+}
+}
+</script>
+</body>
+</html>

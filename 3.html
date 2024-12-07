@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Transfer</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f0f0;
+}
+.transfer-reason-container {
+width: 90%;
+max-width: 400px;
+margin: 40px auto;
+padding: 20px;
+background-color: #fff;
+border: 1px solid #ddd;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+}
+.transfer-reason-heading {
+font-size: 24px;
+font-weight: bold;
+color: #007bff;
+margin-bottom: 20px;
+}
+.transfer-reason-options {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.transfer-reason-option {
+width: 45%;
+height: 40px;
+margin-bottom: 10px;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+}
+.transfer-reason-option.selected {
+background-color: #007bff;
+color: #fff;
+}
+.transfer-reason-input {
+width: 90%;
+height: 40px;
+margin-bottom: 20px;
+padding: 10px;
+font-size: 18px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+.proceed-button {
+width: 90%;
+height: 40px;
+background-color: #007bff;
+color: #fff;
+font-size: 18px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<div class="transfer-reason-container">
+<h2 class="transfer-reason-heading">Reason for Transfer</h2>
+<div class="transfer-reason-options">
+<button class="transfer-reason-option" onclick="selectReason(this)">Rent</button>
+<button class="transfer-reason-option" onclick="selectReason(this)">Utilities</button>
+<button class="transfer-reason-option" onclick="selectReason(this)">Groceries</button>
+<button class="transfer-reason-option" onclick="selectReason(this)">Travel</button>
+</div>
+<input type="text" id="transfer-reason-input" class="transfer-reason-input" placeholder="Other (please specify)">
+<button class="proceed-button" onclick="proceed()">Proceed</button>
+</div>
+<script>
+let selectedReason = null;
+
+function selectReason(button) {
+const reasonButtons = document.querySelectorAll('.transfer-reason-option');
+reasonButtons.forEach((button) => button.classList.remove('selected'));
+button.classList.add('selected');
+selectedReason = button.textContent;
+}
+
+function proceed() {
+if (selectedReason || document.getElementById('transfer-reason-input').value) {
+window.location.href = 'load.html';
+} else {
+alert('Please select or enter a reason for transfer');
+}
+}
+</script>
+</body>
+</html>

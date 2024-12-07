@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Transfer</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f0f0;
+}
+.amount-container {
+width: 90%;
+max-width: 400px;
+margin: 40px auto;
+padding: 20px;
+background-color: #fff;
+border: 1px solid #ddd;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+}
+.amount-heading {
+font-size: 24px;
+font-weight: bold;
+color: #007bff;
+margin-bottom: 20px;
+}
+.price-selection {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+.price-button {
+width: 45%;
+height: 40px;
+margin-bottom: 10px;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+}
+.price-button.selected {
+background-color: #007bff;
+color: #fff;
+}
+.custom-price {
+width: 90%;
+height: 40px;
+margin-bottom: 20px;
+padding: 10px;
+font-size: 18px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+.proceed-button {
+width: 90%;
+height: 40px;
+background-color: #007bff;
+color: #fff;
+font-size: 18px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<div class="amount-container">
+<h2 class="amount-heading">Enter Amount (USD)</h2>
+<div class="price-selection">
+<button class="price-button" onclick="selectPrice(this)">10 USD</button>
+<button class="price-button" onclick="selectPrice(this)">20 USD</button>
+<button class="price-button" onclick="selectPrice(this)">50 USD</button>
+<button class="price-button" onclick="selectPrice(this)">100 USD</button>
+</div>
+<input type="number" id="custom-price" class="custom-price" placeholder="Enter custom amount" required>
+<button class="proceed-button" onclick="proceed()">Proceed</button>
+</div>
+<script>
+let selectedPrice = null;
+
+function selectPrice(button) {
+const priceButtons = document.querySelectorAll('.price-button');
+priceButtons.forEach((button) => button.classList.remove('selected'));
+button.classList.add('selected');
+selectedPrice = button.textContent;
+}
+
+function proceed() {
+if (selectedPrice || document.getElementById('custom-price').value) {
+window.location.href = '3.html';
+} else {
+alert('Please select or enter an amount');
+}
+}
+</script>
+</body>
+</html>

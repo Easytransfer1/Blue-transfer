@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Transfer</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f0f0;
+}
+.balance-container {
+width: 100%;
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background-color: #fff;
+border: 1px solid #ddd;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.balance-heading {
+font-size: 36px;
+font-weight: bold;
+color: #007bff;
+margin-bottom: 40px;
+}
+.balance-amount {
+font-size: 48px;
+font-weight: bold;
+color: #333;
+margin-bottom: 80px;
+}
+.no-transactions {
+font-size: 24px;
+font-weight: bold;
+color: #666;
+margin-bottom: 20px;
+}
+.send-money-button {
+width: 200px;
+height: 40px;
+background-color: #007bff;
+color: #fff;
+font-size: 18px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<div class="balance-container">
+<div class="balance-heading">$0.00</div>
+<div class="balance-amount"></div>
+<div class="no-transactions">No transactions yet</div>
+<button class="send-money-button" onclick="window.location.href='1.html'">Send Money</button>
+</div>
+</body>
+</html>

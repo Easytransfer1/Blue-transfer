@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Transfer</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f0f0;
+}
+.profile-container {
+width: 90%;
+max-width: 400px;
+margin: 40px auto;
+padding: 20px;
+background-color: #fff;
+border: 1px solid #ddd;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+}
+.profile-picture {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+margin-right: 10px;
+}
+.username {
+font-size: 18px;
+font-weight: bold;
+color: #333;
+}
+.user-number {
+font-size: 16px;
+color: #666;
+margin-bottom: 20px;
+}
+.copy-button {
+width: 150px;
+height: 30px;
+background-color: #007bff;
+color: #fff;
+font-size: 14px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}
+.transactions-container {
+margin-top: 20px;
+}
+.no-transactions {
+font-size: 16px;
+color: #666;
+margin-bottom: 10px;
+}
+.send-money-button {
+width: 100%;
+height: 40px;
+background-color: #007bff;
+color: #fff;
+font-size: 18px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+.log-out-button {
+width: 100%;
+height: 40px;
+background-color: #ccc;
+color: #333;
+font-size: 18px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}
+.balance-container {
+width: 100%;
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background-color: #fff;
+border: 1px solid #ddd;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+}
+.balance-heading {
+font-size: 36px;
+font-weight: bold;
+color: #007bff;
+margin-bottom: 40px;
+}
+.balance-amount {
+font-size: 48px;
+font-weight: bold;
+color: #333;
+margin-bottom: 80px;
+}
+</style>
+</head>
+<body>
+<div class="profile-container">
+<div style="display: flex; align-items: center;">
+<div class="profile-picture" style="background-image: url('logo.jpg'); background-size: cover;"></div>
+<div>
+<div class="username">User 509100</div>
+<div class="user-number">User Number: 25539699</div>
+</div>
+</div>
+<button class="copy-button" onclick="copyUserNumber()">Copy User Number</button>
+<div class="transactions-container">
+<div class="no-transactions">No transactions yet</div>
+<button class="send-money-button" onclick="window.location.href='1.html'">Send Money</button>
+<button class="log-out-button" onclick="window.location.href='index.html'">Log Out</button>
+</div>
+</div>
+<div class="balance-container" style="display: none;">
+<div class="balance-heading">$0.00</div>
+<div class="balance-amount"></div>
+</div>
+<script>
+function copyUserNumber() {
+navigator.clipboard.writeText('25539699');
+alert('User number copied to clipboard!');
+}
+</script>
+</body>
+</html>
